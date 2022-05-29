@@ -1,3 +1,5 @@
+# Versão app engine (serverless)
+# export PORT=5000, export BASIC_AUTH_USERNAME= , export BASIC_AUTH_PASSWORD=
 from flask import Flask, request, jsonify
 from flask_basicauth import BasicAuth
 
@@ -36,4 +38,5 @@ def cotacao():
     preco = modelo.predict([dados_input])
     return jsonify(preco=preco[0])
 
-app.run(debug=True, host='0.0.0.0')
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0')

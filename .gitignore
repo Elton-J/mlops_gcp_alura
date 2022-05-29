@@ -32,6 +32,9 @@ var/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+# VAr ambiente
+env_variables.yaml
+
 
 # Unit test / coverage reports
 htmlcov/
