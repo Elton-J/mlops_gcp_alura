@@ -35,5 +35,16 @@
  
  # Serverless (gcloud deploy app)
  
+ # Docker
+ # docker build -t mlops_gcp_alura --build-arg BASIC_AUTH_USERNAME_ARG=elton --build-arg BASIC_AUTH_PASSWORD_ARG=junior . (pasta onde está o dockerfile)
  
+ # docker run -p 5000:5000 mlops_gcp_alura:latest
+ 
+ 
+ # Cloud RUN
+ # gcloud auth configure-docker (Comandos docker com autenticação gcloud)
+ 
+ # docker tag mlops_gcp_alura gcr.io/mlops-gcp-alura/mlops_gcp_alura (tageia a imagem no gcp)
+ 
+ # docker push  gcr.io/mlops-gcp-alura/mlops_gcp_alura (Envia a imagem pro gcp)
  
