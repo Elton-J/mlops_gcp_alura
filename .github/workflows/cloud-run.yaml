@@ -64,7 +64,8 @@ jobs:
         gcloud builds submit \
           --quiet \
           --config cloudbuild.yaml \
-          --substitutions _BASIC_AUTH_USERNAME=$BASIC_AUTH_USERNAME, _BASIC_AUTH_PASSWORD=$BASIC_AUTH_PASSWORD
+          --substitutions _BASIC_AUTH_USERNAME=$BASIC_AUTH_USERNAME, _BASIC_AUTH_PASSWORD=$BASIC_AUTH_PASSWORD, _IMAGE_TAG=gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
+
     
     - name: Deploy to Cloud Run
       run: |-
@@ -73,4 +74,5 @@ jobs:
           --image gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }} \
           --platform "managed" \
           --quiet \
+          --allow-unauthenticated \
           --port 5000
